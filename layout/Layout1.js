@@ -78,7 +78,7 @@ crossOrigin="anonymous"></script>
       <img src={info.logo} alt="" width="100" height="70" className="d-inline-block align-text-top"/>
     </a>
     </Link> */}
-    <div className="wrapper text-center">
+    {/* <div className="wrapper text-center">
   {info.face? <a href={info.face} className="icon p-1 facebook">
     <div className="tooltip coloric">Facebook</div>
     <span><i id="coloric" className="fab coloric fa-2x fa-facebook-f"></i></span>
@@ -102,10 +102,10 @@ crossOrigin="anonymous"></script>
   <span className="ppp">ebdaasa</span>
   <a  href="https://api.whatsapp.com/send?phone=0508411155"><i id="coloric"  className="fab fa-whatsapp  fa-2x "></i></a>
   <a className="ppp" href={`tel:0508411155}`}>050 841 1155</a>
-</div>
+</div> */}
 <Link href={`/`}>
     <a className="navbar-brand" href="/">
-      <img src={info.logo} alt="" width="100" height="70" className="d-inline-block align-text-top"/>
+      <img src={info.logo} alt="" width="200" height="70" className="d-inline-block align-text-top"/>
     </a>
     </Link>
 
@@ -138,7 +138,7 @@ crossOrigin="anonymous"></script>
     
   </li>
               <li className="nav-item ">
-    <Link href="/">
+    <Link href="https://ebdaasaerp.com/Default">
     <a className="nav-link ul-text " >دخول الموظفين</a>
     </Link>
     
@@ -180,7 +180,7 @@ crossOrigin="anonymous"></script>
           </Link>
         </li>
         <li className="nav-item ms-auto">
-           <Link href={`/`}>
+           <Link href={`https://ebdaasaerp.com/Default`}>
           <a className="nav-link active" aria-current="page" >دخول الموظفين</a>
           </Link>
         </li>
@@ -274,7 +274,7 @@ crossOrigin="anonymous"></script>
   <span className="ppp text-light">0508411155</span>
 </div>
 <div className="row justify-content-around">
-    <div className="col-11 col-lg-5 ">
+    {/* <div className="col-11 col-lg-5 ">
     <h5 className="card-title text-center text-light">خدماتنا</h5>
     <ul className="row text-center list-unstyled">
        { category.map((item) => (
@@ -285,14 +285,14 @@ crossOrigin="anonymous"></script>
        </li>
             ))}
     </ul>
-    </div>
+    </div> */}
     <div className="col-11 col-lg-5 ">
     <h5 className="card-title text-end text-light">تواصل معنا</h5>
     <ul className="row text-end list-unstyled">
     <li className="col-12 text-lift">
           <span className="text-light">
            <a  href="https://www.google.com.eg/maps/dir//طريق الملك عبدالعزيز الفرعي، الياسمين، الرياض 13326">
-           لمملكة العربية السعودية . حي التعاون ، طريق أبي بكر الصديق ، مركز الباخرة التجاري ، الرياض  </a>
+           المملكة العربية السعودية . حي التعاون ، طريق أبي بكر الصديق ، مركز الباخرة التجاري ، الرياض  </a>
           </span>
         
         <i className="fas fa-map-marker-alt p-1 text-warning fa-2x"></i>

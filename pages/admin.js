@@ -89,12 +89,11 @@ const onjopsec = (e) => setjop({...jop,sec:e.target.value})
 
       const addjop=async(e)=>{
         e.preventDefault() 
-        if(product.imges&&product.category){
-       const docRef = await setDoc(doc(db, "jops", jop.code), {
-       ...jop,date:Timestamp.now(),imges:imagesitem }); 
+        
+       const docRef = await setDoc(doc(db, "jops", jop.code), jop); 
        setproduct({title:"",code:"",des:"",res:"",sec:"",ser:"",kin:""}) 
        setImagesitem([])
-        }else{alert("أكمل باقي الحقول")}     
+           
       }
  
      //  ---------------------------------------------------------------------------------------------------add category----------------

@@ -9,7 +9,7 @@ import Image from 'next/image'
 import { useRouter } from "next/router";
 import { useAppContext } from "../../AppContext";
 
-const Product = ({item}) => {
+const project = ({item}) => {
     const router = useRouter()
     const [appState, setAppState] = useAppContext()
     const [categ,setcateg]=useState([])
@@ -105,7 +105,7 @@ const Product = ({item}) => {
      );
 }
  
-export default Product;
+export default project;
 export async function getStaticPaths() {
     const pro=[]
     const prodlist = collection(db, 'broductes');

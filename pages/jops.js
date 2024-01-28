@@ -9,15 +9,35 @@ import { useAppContext } from "../AppContext";
 import { async } from "@firebase/util";
 const Jops = () => {
 
-  const [services,setservices]=useState([{title:"مهندس مدني",exp:"20 عام"},
-  {title:"مساح",exp:"5 أعوام"},
-  {title:"معماري",exp:"10 أعوام"},
-  {title:"مخطط زمني",exp:"5 أعوام"},
-  {title:"مصور",exp:"5 أعوام"},
-  {title:"محاسب",exp:"10 أعوام"},
-  {title:"أخصائي موارد بشرية",exp:"5 أعوام"},
-  {title:"مهندس / حاسب كميات",exp:"15 عام"},
-])
+  const [services,setservices]=useState([])
+
+  const [category,setcategory]=useState([]);
+  const de=[]
+  
+  const [appState, setAppState] = useAppContext();
+  const router = useRouter()
+  useEffect(async()=>{
+      const codelist = collection(db, 'jops');
+      const codesnapshot = await getDocs(codelist);
+      const catolist = codesnapshot.docs?codesnapshot.docs.map(doc =>{ de.push(doc.data());   }):de
+      setservices(de)
+      console.log(services)
+      return catolist
+     },[])
+  // const handelrouter=(e,path)=>{
+  //         e.preventDefault() 
+  //         router.push(`product/${path}`)
+  //     }
+  //     const oncart =async(x,y)=> {
+  //     const myArrayFromLocalStorage = localStorage.getItem('mycart')
+  //     if (myArrayFromLocalStorage && myArrayFromLocalStorage.length) {
+  //     var myArray = JSON.parse(myArrayFromLocalStorage)}else{var myArray=[]  }
+  //          myArray.push({"code":x,"title":y,"img":z})
+  //         localStorage.setItem("mycart", JSON.stringify(myArray))
+  //         setAppState(myArray)
+  //         }  
+      
+  
 
 
     
@@ -29,8 +49,11 @@ const Jops = () => {
                 <img className="w-100" src="100.jpg" alt="" />
             <Head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
-    <title>التوظيف</title>
-   <link rel="icon" href="" type="image/x-icon" />
+    <title>الوظائف</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet"></link>
+   <link rel="icon" href="/icon.svg" type="image/x-icon" />
             </Head>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -44,7 +67,7 @@ const Jops = () => {
         <div className="col-12 col-lg-3  p-2">
       <div className=" serv2"  key={x.title}>
       <p className=" serv2-p">{x.title}</p>
-      <p className=" serv2-p1">{x.exp}</p>
+      <p className=" serv2-p1">{x.ser}</p>
       <p className=" serv2-p2">لمزيد من التفاصيل</p>
       </div>
       </div>
